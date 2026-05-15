@@ -13,5 +13,4 @@ A lightweight, automated Bash script designed to monitor system health diagnosti
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/nirmatrix/linux-server-monitor.git](https://github.com/nirmatrix/linux-server-monitor.git)
-   cd linux-server-monitor
+   git clone [https://github.com/nirmatrix/linux-server-monitor.git]
