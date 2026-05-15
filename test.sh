@@ -15,7 +15,7 @@ free | awk ' /^Mem:/  {printf "%.2f%%\n", $3/$2*100}'
 ram_usage=$(get_ram_info)
 echo "RAM Usage = $ram_usage" 
 get_cpu_info(){
-top -bn1 | grep "Cpu(s)" | awk '{print 100-$8 "%"}'
+vmstat 1 2 | tail -n 1 | awk '{print 100-$15 "%"}'
 }
 cpu_usage=$(get_cpu_info)
 echo "CPU Usage = $cpu_usage"
