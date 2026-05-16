@@ -1,28 +1,57 @@
 #!/bin/bash
-system_name="Root health monitoring system"
-echo "Start $system_name"
-TODAY=$(date '+%Y-%m-%d %H-%M-%S')
-echo "$TODAY"
-echo "==============================================="
-get_disk_info(){
-df -h | awk '$6=="/" {print $5, $6}'
+SYSTEM_NAME="Root health monitoring system"
+CURRENT_TIME=$(date '+%Y-%m-%d %H-%M-%S')
+
+REPORT=""
+
+get_disk_usage(){
+df -h / | awk '$6=="/" {print $5, $6}'
 }
-disk_status=$(get_disk_info)
-echo "Disk Usage = $disk_status"
-get_ram_info(){
+get_ram_usage(){
 free | awk ' /^Mem:/  {printf "%.2f%%\n", $3/$2*100}'
-}
-ram_usage=$(get_ram_info)
-echo "RAM Usage = $ram_usage" 
-get_cpu_info(){
+} 
+get_cpu_usage(){
 vmstat 1 2 | tail -n 1 | awk '{print 100-$15 "%"}'
 }
-cpu_usage=$(get_cpu_info)
-echo "CPU Usage = $cpu_usage"
-echo "==============================================="
-get_process_info(){
+get_top_processes(){
 ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 6
 }
 
-echo "RUNNING PROCESSES"
-get_process_info
+build_report(){
+DISK_USAGE=$(get_disk_usage)
+RAM_USAGE=$(get_ram_usage)
+CPU_USAGE=$(get_cpu_usage)
+TOP_PROCESSES=$(get_top_processes)
+
+REPORT+="==================================================\n"
+REPORT+="System : $SYSTEM_NAME\n"
+REPORT+="Time : $CURRENT_TIME\n"
+REPORT+="==================================================\n"
+
+REPORT+="Disk Usage : $DISK_USAGE\n"
+REPORT+="RAM Usage : $RAM_USAGE\n"
+REPORT+="CPU Usage : $CPU_USAGE\n"
+
+REPORT+="==================================================\n"
+REPORT+="TOP RUNNING PROCESSES\n"
+REPORT+="==================================================\n"
+
+REPORT+="$TOP_PROCESSES\n"
+}
+
+print_report(){
+echo -e "$REPORT"
+}
+
+main(){
+build_report
+print_report
+}
+
+main
+
+
+
+
+
+
