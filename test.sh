@@ -1,49 +1,61 @@
 #!/bin/bash
 SYSTEM_NAME="Root health monitoring system"
-CURRENT_TIME=$(date '+%Y-%m-%d %H-%M-%S')
+LOG_FILE="system.log"
 DISK_THRESHOLD=80
-
-REPORT=""
+RAM_THRESHOLD=70
+CPU_THRESHOLD=60
 
 get_disk_usage(){
 df -h / | awk 'NR==2 {gsub("%","",$5); print $5}'
 }
 get_ram_usage(){
-free | awk ' /^Mem:/  {printf "%.2f%%\n", $3/$2*100}'
+free | awk ' /^Mem:/  {printf "%.0f\n", $3/$2*100}'
 }
 get_cpu_usage(){
-vmstat 1 2 | tail -n 1 | awk '{print 100-$15 "%"}'
+vmstat 1 2 | tail -n 1 | awk '{print 100-$15}'
 }
 get_top_processes(){
-ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 6
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | grep -v "ps" | head -n 6
 }
 
-check_disk_threshold(){
+check_status(){
 
-DISK_STATUS=$(get_disk_usage)
+USAGE=$1
+THRESHOLD=$2
 
-if (( DISK_STATUS > DISK_THRESHOLD ));
+if (( USAGE >= 95 ));
 then
-echo "WARNING Disk usage above ${DISK_THRESHOLD}%"
+echo "[CRITICAL]"
+elif (( USAGE >= THRESHOLD ));
+then
+echo "[WARNING!]"
 else
-echo "${DISK_STATUS}%"
+echo "[OK]"
 fi
 }
 
 build_report(){
-DISK_USAGE=$(check_disk_threshold)
+
+CURRENT_TIME=$(date '+%Y-%m-%d %H-%M-%S')
+REPORT=""
+
+DISK_USAGE=$(get_disk_usage)
 RAM_USAGE=$(get_ram_usage)
 CPU_USAGE=$(get_cpu_usage)
 TOP_PROCESSES=$(get_top_processes)
+
+DISK_STATUS=$(check_status "$DISK_USAGE" "$DISK_THRESHOLD")
+RAM_STATUS=$(check_status "$RAM_USAGE" "$RAM_THRESHOLD")
+CPU_STATUS=$(check_status "$CPU_USAGE" "$CPU_THRESHOLD")
 
 REPORT+="==================================================\n"
 REPORT+="System : $SYSTEM_NAME\n"
 REPORT+="Time : $CURRENT_TIME\n"
 REPORT+="==================================================\n"
 
-REPORT+="Disk Usage : $DISK_USAGE\n"
-REPORT+="RAM Usage : $RAM_USAGE\n"
-REPORT+="CPU Usage : $CPU_USAGE\n"
+REPORT+="Disk Usage : ${DISK_USAGE}% $DISK_STATUS\n"
+REPORT+="RAM Usage : ${RAM_USAGE}% $RAM_STATUS\n"
+REPORT+="CPU Usage : ${CPU_USAGE}% $CPU_STATUS\n"
 
 REPORT+="==================================================\n"
 REPORT+="TOP RUNNING PROCESSES\n"
@@ -57,7 +69,7 @@ echo -e "$REPORT"
 }
 
 write_log(){
-echo -e "$REPORT" >> system.log
+echo -e "$REPORT" >> "$LOG_FILE"
 }
 
 main(){
