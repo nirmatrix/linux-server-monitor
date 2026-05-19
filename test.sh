@@ -4,6 +4,7 @@ LOG_FILE="system.log"
 DISK_THRESHOLD=80
 RAM_THRESHOLD=70
 CPU_THRESHOLD=60
+MAX_LOG_SIZE=50000
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
@@ -21,6 +22,9 @@ vmstat 1 2 | tail -n 1 | awk '{print 100-$15}'
 get_top_processes(){
 ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 6
 }
+get_log_size(){
+stat -c%s "$LOG_FILE"
+}
 
 check_status(){
 
@@ -37,6 +41,9 @@ else
 echo "${GREEN}[OK]${NC}"
 fi
 }
+
+
+
 
 build_report(){
 
@@ -72,6 +79,18 @@ print_report(){
 echo -e "$REPORT"
 }
 
+rotate_log(){
+if [[ -f "$LOG_FILE" ]];
+then
+LOG_SIZE=$(get_log_size)
+
+	if (( LOG_SIZE > MAX_LOG_SIZE ));
+	then
+	mv "$LOG_FILE" "$LOG_FILE".old
+	fi
+fi
+}
+
 write_log(){
 echo -e "$REPORT" >> "$LOG_FILE"
 }
@@ -79,6 +98,7 @@ echo -e "$REPORT" >> "$LOG_FILE"
 main(){
 build_report
 print_report
+rotate_log
 write_log
 }
 
