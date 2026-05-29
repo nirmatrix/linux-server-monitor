@@ -1,0 +1,272 @@
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 03-44-41
+==================================================
+Disk Usage : %
+RAM Usage : 6.40%
+CPU Usage : 0%
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1202    1201 ps -eo pid,ppid,cmd,%mem,%c  0.0  300
+   1187     321 /bin/bash ./test.sh          0.0  0.7
+   1169     315 nano zoro.sh                 0.0  0.0
+      1       0 /sbin/init                   0.1  0.0
+    314     313 /init                        0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 03-46-16
+==================================================
+Disk Usage : %
+RAM Usage : 6.42%
+CPU Usage : 0%
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1223    1222 ps -eo pid,ppid,cmd,%mem,%c  0.0  100
+   1169     315 nano zoro.sh                 0.0  0.0
+      1       0 /sbin/init                   0.1  0.0
+    314     313 /init                        0.0  0.0
+    317     316 /init                        0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 03-49-29
+==================================================
+Disk Usage : %
+RAM Usage : 6.41%
+CPU Usage : 0%
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+      1       0 /sbin/init                   0.1  0.0
+   1169     315 nano zoro.sh                 0.0  0.0
+    317     316 /init                        0.0  0.0
+    314     313 /init                        0.0  0.0
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 03-51-47
+==================================================
+Disk Usage : %
+RAM Usage : 6.42%
+CPU Usage : 0%
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1261    1260 ps -eo pid,ppid,cmd,%mem,%c  0.0  100
+   1246     321 /bin/bash ./test.sh          0.0  0.7
+      1       0 /sbin/init                   0.1  0.0
+   1169     315 nano zoro.sh                 0.0  0.0
+    317     316 /init                        0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 03-54-49
+==================================================
+Disk Usage : 1%
+RAM Usage : 6.49%
+CPU Usage : 0%
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1264       1 /usr/libexec/wsl-pro-servic  0.1  0.3
+      1       0 /sbin/init                   0.1  0.0
+    317     316 /init                        0.0  0.0
+    314     313 /init                        0.0  0.0
+   1169     315 nano zoro.sh                 0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 04-03-19
+==================================================
+Disk Usage : 1%
+RAM Usage : 6.51%
+CPU Usage : 0%
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1264       1 /usr/libexec/wsl-pro-servic  0.1  0.0
+      1       0 /sbin/init                   0.1  0.0
+    317     316 /init                        0.0  0.0
+    314     313 /init                        0.0  0.0
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 04-40-52
+==================================================
+Disk Usage : 1%
+RAM Usage : 6.46%
+CPU Usage : 0%
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1386    1385 ps -eo pid,ppid,cmd,%mem,%c  0.0  100
+      1       0 /sbin/init                   0.1  0.0
+    317     316 /init                        0.0  0.0
+    314     313 /init                        0.0  0.0
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 05-45-06
+==================================================
+Disk Usage : 1% [OK]
+RAM Usage : 6.55% [OK]
+CPU Usage : 0% [OK]
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1574    1573 ps -eo pid,ppid,cmd,%mem,%c  0.0  200
+   1532       1 /usr/libexec/wsl-pro-servic  0.1  0.0
+    314     313 /init                        0.0  0.0
+      1       0 /sbin/init                   0.1  0.0
+    317     316 /init                        0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 06-00-08
+==================================================
+Disk Usage : 1% [OK]
+RAM Usage : 6.5% [OK]
+CPU Usage : 0% [OK]
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+    317     316 /init                        0.0  0.0
+    314     313 /init                        0.0  0.0
+      1       0 /sbin/init                   0.1  0.0
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+   1475    1474 /init                        0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 06-02-24
+==================================================
+Disk Usage : 1% [OK]
+RAM Usage : 7% [OK]
+CPU Usage : 0% [OK]
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+   1625    1624 ps -eo pid,ppid,cmd,%mem,%c  0.0  100
+    317     316 /init                        0.0  0.0
+    314     313 /init                        0.0  0.0
+      1       0 /sbin/init                   0.1  0.0
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-18 06-06-28
+==================================================
+Disk Usage : 1% [OK]
+RAM Usage : 7% [OK]
+CPU Usage : 0% [OK]
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+    317     316 /init                        0.0  0.0
+    314     313 /init                        0.0  0.0
+      1       0 /sbin/init                   0.1  0.0
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+   1475    1474 /init                        0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-20 02-46-34
+==================================================
+Disk Usage : 1% [0;32m[OK][0m
+RAM Usage : 6% [0;32m[OK][0m
+CPU Usage : 0% [0;32m[OK][0m
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+      1       0 /sbin/init                   0.1  0.1
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+    325     324 /init                        0.0  0.0
+    191       1 /usr/libexec/wsl-pro-servic  0.1  0.0
+    223       1 /usr/bin/python3 /usr/share  0.2  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-20 04-45-46
+==================================================
+Disk Usage : 1% [0;32m[OK][0m
+RAM Usage : 6% [0;32m[OK][0m
+CPU Usage : 0% [0;32m[OK][0m
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+    PID    PPID CMD                         %MEM %CPU
+    325     324 /init                        0.0  0.0
+      1       0 /sbin/init                   0.1  0.0
+     44       1 /usr/lib/systemd/systemd-jo  0.1  0.0
+    322     321 /init                        0.0  0.0
+    171       1 @dbus-daemon --system --add  0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-28 04-03-11
+==================================================
+Disk Usage : 1% [0;32m[OK][0m
+RAM Usage : 11% [0;32m[OK][0m
+CPU Usage : 0% [0;32m[OK][0m
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+  PID  PPID CMD                         %MEM %CPU
+ 4631  4630 ps -eo pid,ppid,cmd,%mem,%c  0.0  100
+   44     1 /usr/lib/systemd/systemd-jo  0.1  0.2
+ 1012  1011 /mnt/wsl/docker-desktop/doc  0.3  0.0
+    1     0 /sbin/init                   0.1  0.0
+ 4518  4517 /init                        0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-28 04-09-03
+==================================================
+Disk Usage : 1% [0;32m[OK][0m
+RAM Usage : 11% [0;32m[OK][0m
+CPU Usage : 0% [0;32m[OK][0m
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+  PID  PPID CMD                         %MEM %CPU
+   44     1 /usr/lib/systemd/systemd-jo  0.1  0.2
+ 1012  1011 /mnt/wsl/docker-desktop/doc  0.3  0.0
+    1     0 /sbin/init                   0.1  0.0
+ 4518  4517 /init                        0.0  0.0
+  168     1 @dbus-daemon --system --add  0.0  0.0
+
+==================================================
+System : Root health monitoring system
+Time : 2026-05-28 04-15-27
+==================================================
+Disk Usage : 1% [0;32m[OK][0m
+RAM Usage : 11% [0;32m[OK][0m
+CPU Usage : 0% [0;32m[OK][0m
+==================================================
+TOP RUNNING PROCESSES
+==================================================
+  PID  PPID CMD                         %MEM %CPU
+ 4722  4522 /bin/bash ./test.sh          0.0  0.8
+   44     1 /usr/lib/systemd/systemd-jo  0.1  0.2
+ 1012  1011 /mnt/wsl/docker-desktop/doc  0.3  0.0
+    1     0 /sbin/init                   0.1  0.0
+ 4518  4517 /init                        0.0  0.0
+

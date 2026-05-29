@@ -1,5 +1,14 @@
 #!/bin/bash
-source config.conf
+SYSTEM_NAME="Root health monitoring system"
+LOG_FILE="system.log"
+DISK_THRESHOLD=80
+RAM_THRESHOLD=70
+CPU_THRESHOLD=60
+MAX_LOG_SIZE=50000
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
 
 get_disk_usage(){
 df -h / | awk 'NR==2 {gsub("%","",$5); print $5}'
@@ -74,7 +83,7 @@ LOG_SIZE=$(get_log_size)
 
 	if (( LOG_SIZE > MAX_LOG_SIZE ));
 	then
-	mv "$LOG_FILE" "${LOG_FILE}.old"
+	mv "$LOG_FILE" "$LOG_FILE".old
 	fi
 fi
 }
